@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PlayerAsset
   m_EditorClassIdentifier: 
   m_speed: 0.2
+  m_baseContamination: 0
   m_horizontalInputType: 2
   m_verticalInputType: 3
-  m_defaultProjectilePrefab: {fileID: 437083600127779700, guid: a55a615a0e66a7745befa2249d2bf1a8,
+  m_defaultProjectilePrefab: {fileID: 4321681708115817416, guid: b1c4385842cfe5e4e8b0195ac880fb0e,
     type: 3}

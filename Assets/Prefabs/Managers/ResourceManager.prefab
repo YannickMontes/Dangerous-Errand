@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_objectsToPool:
-  - Prefab: {fileID: 9063701377876902704, guid: a55a615a0e66a7745befa2249d2bf1a8,
+  - Prefab: {fileID: 2865590342485726717, guid: f2662e0e99901ab49b7f44497142e5c3,
+      type: 3}
+    Size: 10
+  - Prefab: {fileID: 2865590342485726717, guid: b1c4385842cfe5e4e8b0195ac880fb0e,
       type: 3}
     Size: 10
