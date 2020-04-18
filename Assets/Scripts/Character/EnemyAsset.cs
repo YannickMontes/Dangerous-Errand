@@ -5,8 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/EnemyAsset")]
 public class EnemyAsset : CharacterAsset
 {
-	public float TimeBetweenShoot { get { return m_timeBetweenShoot; } }
+	public IReadOnlyList<EnemyBehaviourAsset> DefaultBehaviours { get { return m_defaultBehaviours; } }
+
+	#region Private
 
 	[SerializeField]
-	private float m_timeBetweenShoot = 2.0f;
+	private List<EnemyBehaviourAsset> m_defaultBehaviours = new List<EnemyBehaviourAsset>();
+
+	#endregion Private
 }

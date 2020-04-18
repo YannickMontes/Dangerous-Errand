@@ -21,14 +21,17 @@ public class ResourceManager : MonoBehaviour
 	public GameObject AcquireInstance(GameObject prefab, Transform parent, bool active = true)
 	{
 		GameObject instance = null;
-		if (m_pooledObjects[prefab].Count == 0)
+		if (!m_pooledObjects.ContainsKey(prefab) || m_pooledObjects[prefab].Count == 0)
 		{
-			instance = GameObject.Instantiate(prefab, parent);
+			instance = GameObject.Instantiate(prefab);
 		}
 		else
 		{
 			instance = m_pooledObjects[prefab].Dequeue();
 		}
+		instance.transform.SetParent(parent);
+		instance.transform.position = parent.position;
+		instance.transform.rotation = parent.rotation;
 		instance.SetActive(active);
 		m_usedObjects.Add(new PooledObject(prefab, instance));
 		return instance;
@@ -47,9 +50,18 @@ public class ResourceManager : MonoBehaviour
 				break;
 			}
 		}
-		if (!m_pooledObjects.ContainsKey(prefab))
+
+		if (prefab == null)
 		{
 			Destroy(instance);
+			return;
+		}
+
+		if (!m_pooledObjects.ContainsKey(prefab))
+		{
+			Queue<GameObject> newPool = new Queue<GameObject>();
+			newPool.Enqueue(instance);
+			m_pooledObjects.Add(prefab, newPool);
 		}
 		else
 		{
@@ -70,8 +82,8 @@ public class ResourceManager : MonoBehaviour
 	{
 		public PooledObject(GameObject prefab, GameObject instance)
 		{
-			Object = instance;
 			Prefab = prefab;
+			Object = instance;
 		}
 
 		public GameObject Object;

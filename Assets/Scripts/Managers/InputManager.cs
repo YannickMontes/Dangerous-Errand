@@ -74,7 +74,7 @@ public class InputManager : MonoBehaviour
 		float horizontalInput = Input.GetAxis("Horizontal");
 		float verticalInput = Input.GetAxis("Vertical");
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Space))
 		{
 			m_shootButtonDelegate?.Invoke();
 		}

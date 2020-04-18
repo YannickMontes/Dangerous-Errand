@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_asset: {fileID: 11400000, guid: 4a06958113124144a96a1d2486f9bc01, type: 2}
+  m_allProjectilesHandler: []
 --- !u!95 &2969132487044954588
 Animator:
   serializedVersion: 3

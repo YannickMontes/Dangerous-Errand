@@ -7,20 +7,11 @@ public class Projectile : MonoBehaviour
 {
 	public int ContaminationValue { get { return m_contaminationValue; } }
 
-	public static Projectile AcquireInstance(Projectile prefab, Transform parent, Vector3 position
-		, Vector3 direction)
-	{
-		Projectile proj = ResourceManager.Instance.AcquireInstance(prefab, parent);
-		proj.transform.position = position;
-		proj.m_direction = direction;
-		return proj;
-	}
-
 	#region Private
 
 	private void FixedUpdate()
 	{
-		transform.Translate(m_direction * m_speed);
+		transform.Translate(Vector3.up * m_speed);
 	}
 
 	protected virtual void OnTriggerEnter2D(Collider2D collision)

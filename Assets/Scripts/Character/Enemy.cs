@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class Enemy : Character
@@ -16,25 +17,36 @@ public class Enemy : Character
 		}
 	}
 
+	public void PlayShootAnim()
+	{
+		m_animator.SetTrigger("Shoot");
+	}
+
 	#region Private
 
 	protected override void Awake()
 	{
 		base.Awake();
 		m_animator = GetComponent<Animator>();
-		StartCoroutine(Shoot());
-	}
-
-	private IEnumerator Shoot()
-	{
-		yield return new WaitForSeconds(Asset.TimeBetweenShoot);
-		while (m_contamination > 0)
+		foreach (EnemyBehaviourAsset behaviourAsset in Asset.DefaultBehaviours)
 		{
-			Projectile projectile = Projectile.AcquireInstance(Asset.DefaultProjectile, null, transform.position, Vector2.down);
-			m_animator.SetTrigger("Shoot");
-			yield return new WaitForSeconds(Asset.TimeBetweenShoot);
+			m_behaviours.Add(behaviourAsset.CreateBehaviour());
 		}
 	}
+
+	protected override void Start()
+	{
+		base.Start();
+		foreach (EnemyBehaviour behaviour in m_behaviours)
+		{
+			behaviour.StartBehaviour(this);
+		}
+	}
+
+	[SerializeField]
+	private List<ProjectileHandler> m_allProjectilesHandler = new List<ProjectileHandler>();
+	[SerializeField]
+	private List<EnemyBehaviour> m_behaviours = new List<EnemyBehaviour>();
 
 	[NonSerialized]
 	private Animator m_animator = null;
