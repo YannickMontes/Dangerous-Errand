@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6140948949342412685}
   - component: {fileID: 8531956424333489587}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4033138466702657104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 2865590342485726718}
   m_RootOrder: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.879879, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 696619340e88c6044a3f86adda07e514, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,6 +106,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063701377876902706, guid: cb823ef6a232c26499d1b97c3fd2b67c,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0015788972
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063701377876902706, guid: cb823ef6a232c26499d1b97c3fd2b67c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.4410411
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063701377876902706, guid: cb823ef6a232c26499d1b97c3fd2b67c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0071030706
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063701377876902706, guid: cb823ef6a232c26499d1b97c3fd2b67c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.17420614
       objectReference: {fileID: 0}
     - target: {fileID: 9063701377876902707, guid: cb823ef6a232c26499d1b97c3fd2b67c,
         type: 3}

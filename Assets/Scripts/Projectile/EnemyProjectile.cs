@@ -14,6 +14,7 @@ public class EnemyProjectile : Projectile
 		{
 			Player player = collision.gameObject.GetComponent<Player>();
 			player.IncreaseContamination(m_contaminationValue);
+			ResourceManager.Instance.ReleaseInstance(gameObject);
 		}
 	}
 

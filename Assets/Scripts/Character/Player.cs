@@ -14,14 +14,14 @@ public class Player : Character
 
 	#region Private
 
-	private void Start()
+	protected override void Start()
 	{
 		InputManager.Instance.RegisterOnInputAxis(Asset.HorizontalInputType, OnAxisInput, true);
 		InputManager.Instance.RegisterOnInputAxis(Asset.VerticalInputType, OnAxisInput, true);
 		InputManager.Instance.RegisterOnShootButtonDown(OnShootButtonDown, true);
 	}
 
-	private void OnDestroy()
+	protected override void OnDestroy()
 	{
 		InputManager.Instance.RegisterOnInputAxis(Asset.HorizontalInputType, OnAxisInput, false);
 		InputManager.Instance.RegisterOnInputAxis(Asset.VerticalInputType, OnAxisInput, false);

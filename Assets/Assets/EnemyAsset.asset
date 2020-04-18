@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 2
   m_baseContamination: 5
+  m_defaultProjectilePrefab: {fileID: -1293779299057387050, guid: f2662e0e99901ab49b7f44497142e5c3,
+    type: 3}
+  m_timeBetweenShoot: 2

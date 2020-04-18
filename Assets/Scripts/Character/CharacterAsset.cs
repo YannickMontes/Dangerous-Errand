@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class CharacterAsset : ScriptableObject
 {
+	public Projectile DefaultProjectile { get { return m_defaultProjectilePrefab; } }
+
 	public float Speed { get { return m_speed; } }
 	public int BaseContamination { get { return m_baseContamination; } }
 
@@ -14,6 +16,9 @@ public abstract class CharacterAsset : ScriptableObject
 
 	[SerializeField]
 	private int m_baseContamination = 0;
+
+	[SerializeField]
+	private Projectile m_defaultProjectilePrefab = null;
 
 	#endregion Private
 }

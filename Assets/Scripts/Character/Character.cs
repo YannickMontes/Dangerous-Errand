@@ -9,9 +9,25 @@ public class Character : MonoBehaviour
 
 	#region Private
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		m_contamination = Asset.BaseContamination;
+	}
+
+	protected virtual void Start()
+	{
+	}
+
+	protected virtual void OnEnable()
+	{
+	}
+
+	protected virtual void OnDisable()
+	{
+	}
+
+	protected virtual void OnDestroy()
+	{
 	}
 
 	[SerializeField]
