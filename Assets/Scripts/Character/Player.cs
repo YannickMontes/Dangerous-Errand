@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character
 {
 	public new PlayerAsset Asset { get { return base.Asset as PlayerAsset; } }
+
+	public void IncreaseContamination(int value)
+	{
+		m_contamination += value;
+	}
 
 	#region Private
 
@@ -36,7 +42,7 @@ public class Player : Character
 
 	private void OnShootButtonDown()
 	{
-		Projectile projectile = Projectile.AcquireInstance(Asset.DefaultProjectile, null, transform.position);
+		Projectile projectile = Projectile.AcquireInstance(Asset.DefaultProjectile, null, transform.position, Vector2.up);
 	}
 
 	private void FixedUpdate()
@@ -47,7 +53,10 @@ public class Player : Character
 		}
 	}
 
+	[NonSerialized]
 	private float m_horizontalSpeed = 0.0f;
+
+	[NonSerialized]
 	private float m_verticalSpeed = 0.0f;
 
 	#endregion Private
