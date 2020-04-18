@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 71084752}
   m_Layer: 0
   m_Name: LeftBorder
-  m_TagString: Boder
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 389421378}
   m_Layer: 0
   m_Name: BotBorder
-  m_TagString: Boder
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cb0c1a72a95d44c816c0b2a9feb6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_defaultSpeed: 0.05
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -378,7 +379,7 @@ GameObject:
   - component: {fileID: 570290485}
   m_Layer: 0
   m_Name: RightBorder
-  m_TagString: Boder
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,7 +436,7 @@ GameObject:
   - component: {fileID: 790782677}
   m_Layer: 0
   m_Name: TopBorder
-  m_TagString: Boder
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,6 +481,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1999106659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999106661}
+  - component: {fileID: 1999106660}
+  m_Layer: 0
+  m_Name: ResourceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1999106660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999106659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf0b1fa33431b74088f8d2e805f0fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_objectToPool:
+  - Prefab: {fileID: 9063701377876902704, guid: a55a615a0e66a7745befa2249d2bf1a8,
+      type: 3}
+    Size: 10
+--- !u!4 &1999106661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999106659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2155753879380447871
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,14 @@ public class Player : Character
 	{
 		InputManager.Instance.RegisterOnInputAxis(Asset.HorizontalInputType, OnAxisInput, true);
 		InputManager.Instance.RegisterOnInputAxis(Asset.VerticalInputType, OnAxisInput, true);
+		InputManager.Instance.RegisterOnShootButtonDown(OnShootButtonDown, true);
+	}
+
+	private void OnDestroy()
+	{
+		InputManager.Instance.RegisterOnInputAxis(Asset.HorizontalInputType, OnAxisInput, false);
+		InputManager.Instance.RegisterOnInputAxis(Asset.VerticalInputType, OnAxisInput, false);
+		InputManager.Instance.RegisterOnShootButtonDown(OnShootButtonDown, false);
 	}
 
 	private void OnAxisInput(InputManager.InputAxisType inputType, float value)
@@ -24,6 +32,11 @@ public class Player : Character
 		{
 			m_verticalSpeed = value * Asset.Speed;
 		}
+	}
+
+	private void OnShootButtonDown()
+	{
+		Projectile projectile = Projectile.AcquireInstance(Asset.DefaultProjectile, null, transform.position);
 	}
 
 	private void FixedUpdate()

@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
 
 	public delegate void OnInputAxisDelegate(InputAxisType inputType, float value);
 
+	public delegate void OnShootButtonDown();
+
 	[Serializable]
 	public enum InputAxisType
 	{
@@ -27,6 +29,18 @@ public class InputManager : MonoBehaviour
 		else
 		{
 			m_inputDelegates[inputAxisType] -= method;
+		}
+	}
+
+	public void RegisterOnShootButtonDown(OnShootButtonDown method, bool register)
+	{
+		if (register)
+		{
+			m_shootButtonDelegate += method;
+		}
+		else
+		{
+			m_shootButtonDelegate -= method;
 		}
 	}
 
@@ -60,6 +74,11 @@ public class InputManager : MonoBehaviour
 		float horizontalInput = Input.GetAxis("Horizontal");
 		float verticalInput = Input.GetAxis("Vertical");
 
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			m_shootButtonDelegate?.Invoke();
+		}
+
 		m_inputDelegates[InputAxisType.HORIZONTAL]?.Invoke(InputAxisType.HORIZONTAL, horizontalInput);
 		m_inputDelegates[InputAxisType.HORIZONTAL_RAW]?.Invoke(InputAxisType.HORIZONTAL_RAW, horizontalInputRaw);
 		m_inputDelegates[InputAxisType.VERTICAL]?.Invoke(InputAxisType.VERTICAL, verticalInput);
@@ -67,6 +86,7 @@ public class InputManager : MonoBehaviour
 	}
 
 	private Dictionary<InputAxisType, OnInputAxisDelegate> m_inputDelegates = null;
+	private OnShootButtonDown m_shootButtonDelegate = null;
 	private static InputManager s_instance = null;
 
 	#endregion Private
