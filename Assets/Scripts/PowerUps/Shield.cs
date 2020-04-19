@@ -31,7 +31,12 @@ public class Shield : MonoBehaviour
 	{
 		if (collision.tag == "Enemy")
 		{
-			BreakShield();
+			Enemy enemy = collision.GetComponent<Enemy>();
+			if (enemy.IsAlive)
+			{
+				BreakShield();
+				enemy.Kill();
+			}
 		}
 	}
 
