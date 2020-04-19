@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraIncreaseSpeedPoint : CameraControlPoint
 {
-	protected override void OnPlayerEnter()
+	protected override void OnCameraEnter()
 	{
 		CameraController.Instance.IncreaseTravellingSpeed(m_increaseValue);
 	}

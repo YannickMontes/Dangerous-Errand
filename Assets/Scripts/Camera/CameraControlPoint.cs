@@ -5,21 +5,21 @@ using UnityEngine;
 
 public abstract class CameraControlPoint : MonoBehaviour
 {
-	#region Private
-
-	protected abstract void OnPlayerEnter();
-
-	private void OnTriggerEnter2D(Collider2D collision)
+	public void Apply()
 	{
-		if (!m_hasTrigger && collision.tag == "Player")
+		if (!m_alreadyApplied)
 		{
-			OnPlayerEnter();
-			m_hasTrigger = true;
+			m_alreadyApplied = true;
+			OnCameraEnter();
 		}
 	}
 
+	#region Private
+
+	protected abstract void OnCameraEnter();
+
 	[NonSerialized]
-	private bool m_hasTrigger = false;
+	private bool m_alreadyApplied = false;
 
 	#endregion Private
 }

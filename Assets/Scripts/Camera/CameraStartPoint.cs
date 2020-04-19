@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraStartPoint : CameraControlPoint
 {
-	protected override void OnPlayerEnter()
+	protected override void OnCameraEnter()
 	{
 		CameraController.Instance.StartTravelling();
 	}

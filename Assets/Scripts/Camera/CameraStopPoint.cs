@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CameraStopPoint : CameraControlPoint
 {
-	protected override void OnPlayerEnter()
+	protected override void OnCameraEnter()
 	{
-		CameraController.Instance.StartTravelling();
+		CameraController.Instance.StopTravelling();
 	}
 }

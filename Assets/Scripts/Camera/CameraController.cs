@@ -42,8 +42,21 @@ public class CameraController : MonoBehaviour
 		transform.Translate(new Vector2(0.0f, m_currentSpeed));
 	}
 
+	private void Update()
+	{
+		Debug.DrawLine(transform.position, transform.position + (Vector3.forward * 5), Color.red, 2.0f);
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 15.0f, m_camControlMask);
+		if (hit.collider != null)
+		{
+			hit.collider.gameObject.GetComponent<CameraControlPoint>().Apply();
+			Debug.Log("ACQUI DENTRO");
+		}
+	}
+
 	[SerializeField]
 	private float m_defaultSpeed = 0.05f;
+	[SerializeField]
+	private LayerMask m_camControlMask = 0;
 
 	[NonSerialized]
 	private float m_currentSpeed = 0.0f;
