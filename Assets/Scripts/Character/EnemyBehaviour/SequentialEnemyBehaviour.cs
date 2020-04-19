@@ -33,7 +33,7 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 			EnemyBehaviourAsset.ProjectileBehaviour projBehaviour = Asset.ProjectileBehaviours[m_currentIndex];
 			m_currentBehaviour = ResourceManager.Instance.AcquireInstance(projBehaviour.ProjectileHandlerPrefab, enemy.transform);
 			float elapsedTime = 0.0f;
-			while (elapsedTime < projBehaviour.ActiveTime)
+			while (projBehaviour.ActiveTime == -1 || elapsedTime < projBehaviour.ActiveTime)
 			{
 				foreach (GameObject emmiter in m_currentBehaviour.Emitters)
 				{
