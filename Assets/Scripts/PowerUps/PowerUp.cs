@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
+	public int PickUpScore { get { return m_pickUpScore; } }
+
 	public virtual void StartPowerUp(Player player)
 	{
 		SetActive(true);
@@ -28,6 +30,8 @@ public abstract class PowerUp : MonoBehaviour
 
 	[SerializeField]
 	private GameObject m_groundPowerUpVisual = null;
+	[SerializeField]
+	private int m_pickUpScore = 10;
 
 	[NonSerialized]
 	protected bool m_isActive = false;

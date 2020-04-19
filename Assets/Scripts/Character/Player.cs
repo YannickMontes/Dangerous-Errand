@@ -27,6 +27,7 @@ public class Player : Character
 		powerUp.transform.rotation = transform.rotation;
 		powerUp.StartPowerUp(this);
 		m_powerUps.Add(powerUp);
+		ScoringManager.Instance.IncreaseScore(powerUp.PickUpScore);
 	}
 
 	public void RemovePowerUp(PowerUp powerUp)

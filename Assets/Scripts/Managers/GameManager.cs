@@ -68,6 +68,11 @@ public class GameManager : MonoBehaviour
 		{
 			m_currentState = evt;
 			m_onEventListeners?.Invoke(m_currentState);
+
+			if (m_currentState != State.DEFAULT)
+			{
+				InputManager.Instance.gameObject.SetActive(false);
+			}
 		}
 	}
 

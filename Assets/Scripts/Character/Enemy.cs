@@ -13,13 +13,14 @@ public class Enemy : Character
 
 	public void DecreaseContamination(int value)
 	{
-		if (m_contamination >= 0)
+		if (m_contamination > 0)
 		{
 			float oldValue = m_contamination;
 			m_contamination -= value;
 			m_contaminationValueListeners?.Invoke(oldValue, m_contamination);
 			if (m_contamination <= 0)
 			{
+				ScoringManager.Instance.IncreaseScore(Asset.KillScore);
 				m_animator.SetBool("Healed", true);
 				foreach (EnemyBehaviour behaviour in m_behaviours)
 				{
