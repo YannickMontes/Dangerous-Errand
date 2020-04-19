@@ -9,6 +9,11 @@ public class Projectile : MonoBehaviour
 
 	#region Private
 
+	private void OnEnable()
+	{
+		Invoke("ReleaseProjectile", m_lifeTime);
+	}
+
 	private void FixedUpdate()
 	{
 		transform.Translate(Vector3.up * m_speed);
@@ -16,7 +21,15 @@ public class Projectile : MonoBehaviour
 
 	protected virtual void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag == "Border")
+		if (collision.tag.Contains("Border"))
+		{
+			ResourceManager.Instance.ReleaseInstance(gameObject);
+		}
+	}
+
+	private void ReleaseProjectile()
+	{
+		if (gameObject.activeInHierarchy)
 		{
 			ResourceManager.Instance.ReleaseInstance(gameObject);
 		}
@@ -24,10 +37,10 @@ public class Projectile : MonoBehaviour
 
 	[SerializeField]
 	private float m_speed = 1.0f;
-
 	[SerializeField]
 	protected int m_contaminationValue = 2;
-
+	[SerializeField]
+	private float m_lifeTime = 5.0f;
 	[NonSerialized]
 	private Vector3 m_direction = Vector2.up;
 

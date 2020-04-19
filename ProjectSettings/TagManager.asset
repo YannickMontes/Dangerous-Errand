@@ -4,9 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Border
   - Projectile
   - Enemy
+  - TopBorder
+  - BotBorder
+  - RightBorder
+  - LeftBorder
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - 
   - Enemy
   - Border
-  - 
+  - Player
   - 
   - 
   - 

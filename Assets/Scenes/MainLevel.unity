@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 71084752}
   m_Layer: 9
   m_Name: LeftBorder
-  m_TagString: Border
+  m_TagString: LeftBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 389421378}
   m_Layer: 9
   m_Name: BotBorder
-  m_TagString: Border
+  m_TagString: BotBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,7 +611,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 200, y: 4}
+  m_Size: {x: 200, y: 8}
   m_EdgeRadius: 0
 --- !u!1 &462892787
 GameObject:
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 570290485}
   m_Layer: 9
   m_Name: RightBorder
-  m_TagString: Border
+  m_TagString: RightBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 790782677}
   m_Layer: 9
   m_Name: TopBorder
-  m_TagString: Border
+  m_TagString: TopBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2799,10 +2799,20 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5994447228929885466, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5994447229553997331, guid: f3ea2830095dabe4cb989ae958840265,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994447229553997331, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5994447229553997341, guid: f3ea2830095dabe4cb989ae958840265,
         type: 3}
@@ -2858,6 +2868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994447229553997343, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ea2830095dabe4cb989ae958840265, type: 3}
