@@ -13,7 +13,9 @@ public class Enemy : Character
 	{
 		if (m_contamination >= 0)
 		{
+			float oldValue = m_contamination;
 			m_contamination -= value;
+			m_contaminationValueListeners?.Invoke(oldValue, m_contamination);
 			if (m_contamination <= 0)
 			{
 				m_animator.SetBool("Healed", true);
