@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
 	protected virtual void Awake()
 	{
 		m_contamination = Asset.BaseContamination;
+		m_animator = GetComponent<Animator>();
 	}
 
 	protected virtual void Start()
@@ -35,6 +36,8 @@ public class Character : MonoBehaviour
 
 	[NonSerialized]
 	protected int m_contamination = 0;
+	[NonSerialized]
+	protected Animator m_animator = null;
 
 	#endregion Private
 }
