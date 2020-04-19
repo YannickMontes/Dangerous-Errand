@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class ShieldPowerUp : PowerUp
 {
-	public override void StartPowerUp(Player player)
-	{
-		SetActive(true);
-	}
-
 	#region Private
 
 	private void Update()
@@ -28,12 +23,11 @@ public class ShieldPowerUp : PowerUp
 		}
 	}
 
-	private void SetActive(bool active)
+	protected override void SetActive(bool active)
 	{
-		m_isActive = active;
+		base.SetActive(active);
 		if (m_isActive)
 		{
-			m_groundPowerUpVisual.SetActive(false);
 			m_rotateEmmiter.gameObject.SetActive(true);
 			m_rotateEmmiter.StartBehaviour();
 		}
@@ -46,14 +40,9 @@ public class ShieldPowerUp : PowerUp
 	}
 
 	[SerializeField]
-	private GameObject m_groundPowerUpVisual = null;
-	[SerializeField]
 	private RotateEmmiterHandler m_rotateEmmiter = null;
 	[SerializeField]
 	private List<GameObject> m_shields = new List<GameObject>();
-
-	[NonSerialized]
-	private bool m_isActive = false;
 
 	#endregion Private
 }

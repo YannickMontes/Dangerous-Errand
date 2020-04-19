@@ -26,6 +26,13 @@ public class Player : Character
 		powerUp.transform.position = transform.position;
 		powerUp.transform.rotation = transform.rotation;
 		powerUp.StartPowerUp(this);
+		m_powerUps.Add(powerUp);
+	}
+
+	public void RemovePowerUp(PowerUp powerUp)
+	{
+		powerUp.transform.parent = null;
+		m_powerUps.Remove(powerUp);
 	}
 
 	#region Private
@@ -87,8 +94,27 @@ public class Player : Character
 	{
 		if (m_canShoot)
 		{
-			Projectile projectile = ResourceManager.Instance.AcquireInstance(Asset.DefaultProjectile, transform);
-			projectile.transform.SetParent(null);
+			bool hasShootedWithPowerUp = false;
+			foreach (PowerUp powerUp in m_powerUps)
+			{
+				ProjectileEmmiterPowerUp projEmmiterPowerUp = powerUp as ProjectileEmmiterPowerUp;
+				if (projEmmiterPowerUp != null)
+				{
+					foreach (GameObject emmiter in projEmmiterPowerUp.Emmiters)
+					{
+						hasShootedWithPowerUp = true;
+						Projectile projectile = ResourceManager.Instance.AcquireInstance(Asset.DefaultProjectile, emmiter.transform);
+						projectile.transform.SetParent(null);
+					}
+				}
+			}
+
+			if (!hasShootedWithPowerUp)
+			{
+				Projectile projectile = ResourceManager.Instance.AcquireInstance(Asset.DefaultProjectile, transform);
+				projectile.transform.SetParent(null);
+			}
+
 			m_canShoot = false;
 			StartCoroutine(WaitCanShoot());
 		}
@@ -145,6 +171,8 @@ public class Player : Character
 	private bool m_isHit = false;
 	[NonSerialized]
 	private List<GameObject> m_borderColliding = new List<GameObject>();
+	[NonSerialized]
+	private List<PowerUp> m_powerUps = new List<PowerUp>();
 
 	#endregion Private
 }
