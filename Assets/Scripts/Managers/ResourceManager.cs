@@ -30,8 +30,8 @@ public class ResourceManager : MonoBehaviour
 			instance = m_pooledObjects[prefab].Dequeue();
 		}
 		instance.transform.SetParent(parent);
-		instance.transform.position = parent.position;
-		instance.transform.rotation = parent.rotation;
+		instance.transform.position = parent != null ? parent.position : Vector3.zero;
+		instance.transform.rotation = parent != null ? parent.rotation : Quaternion.identity;
 		instance.SetActive(active);
 		m_usedObjects.Add(new PooledObject(prefab, instance));
 		return instance;

@@ -11,10 +11,17 @@ public class Enemy : Character
 
 	public void DecreaseContamination(int value)
 	{
-		m_contamination -= value;
-		if (m_contamination <= 0)
+		if (m_contamination >= 0)
 		{
-			m_animator.SetBool("Healed", true);
+			m_contamination -= value;
+			if (m_contamination <= 0)
+			{
+				m_animator.SetBool("Healed", true);
+				foreach (EnemyBehaviour behaviour in m_behaviours)
+				{
+					behaviour.StopBehaviour(this);
+				}
+			}
 		}
 	}
 

@@ -71,7 +71,8 @@ public class Player : Character
 	{
 		if (m_canShoot)
 		{
-			Projectile projectile = ResourceManager.Instance.AcquireInstance(Asset.DefaultProjectile, null);
+			Projectile projectile = ResourceManager.Instance.AcquireInstance(Asset.DefaultProjectile, transform);
+			projectile.transform.SetParent(null);
 			m_canShoot = false;
 			StartCoroutine(WaitCanShoot());
 		}
@@ -81,7 +82,6 @@ public class Player : Character
 	{
 		if (m_horizontalSpeed != 0 || m_verticalSpeed != 0)
 		{
-			Debug.Log("Translate x: " + m_horizontalSpeed + " Translate y: " + m_verticalSpeed);
 			transform.Translate(new Vector2(m_horizontalSpeed, m_verticalSpeed));
 		}
 	}
