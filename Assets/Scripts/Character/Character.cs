@@ -5,7 +5,22 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+	public delegate void OnContaminationValueChange(float oldValue, float newValue);
+
 	public CharacterAsset Asset { get { return m_asset; } }
+	public float ContaminationValue { get { return m_contamination; } }
+
+	public void RegisterContaminationValueChangedListener(OnContaminationValueChange listener, bool register)
+	{
+		if (register)
+		{
+			m_contaminationValueListeners += listener;
+		}
+		else
+		{
+			m_contaminationValueListeners -= listener;
+		}
+	}
 
 	#region Private
 
@@ -38,6 +53,8 @@ public class Character : MonoBehaviour
 	protected int m_contamination = 0;
 	[NonSerialized]
 	protected Animator m_animator = null;
+	[NonSerialized]
+	protected OnContaminationValueChange m_contaminationValueListeners = null;
 
 	#endregion Private
 }

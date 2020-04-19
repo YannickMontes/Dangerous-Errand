@@ -104,7 +104,9 @@ public class Player : Character
 
 	private void IncreaseContamination(int value)
 	{
+		float oldValue = m_contamination;
 		m_contamination += value;
+		m_contaminationValueListeners?.Invoke(oldValue, m_contamination);
 	}
 
 	private IEnumerator WaitCanShoot()
