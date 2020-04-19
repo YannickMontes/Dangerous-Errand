@@ -9,6 +9,8 @@ public class Enemy : Character
 {
 	public new EnemyAsset Asset { get { return base.Asset as EnemyAsset; } }
 
+	public bool IsAlive { get { return m_contamination > 0; } }
+
 	public void DecreaseContamination(int value)
 	{
 		if (m_contamination >= 0)
@@ -30,6 +32,11 @@ public class Enemy : Character
 	public void PlayShootAnim()
 	{
 		m_animator.SetTrigger("Shoot");
+	}
+
+	public void Kill()
+	{
+		DecreaseContamination((int)ContaminationValue);
 	}
 
 	#region Private
