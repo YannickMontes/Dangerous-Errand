@@ -45,9 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_emitters:
-  - {fileID: 8970975685061314420}
-  m_projectilePrefab: {fileID: -1293779299057387050, guid: f2662e0e99901ab49b7f44497142e5c3,
-    type: 3}
+  - {fileID: 970452280155900742}
   m_emmiterParent: {fileID: 8970975684878140884}
 --- !u!1 &8970975684878140887
 GameObject:
@@ -89,6 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8970975685061314421}
+  - component: {fileID: 970452280155900742}
   m_Layer: 0
   m_Name: Emmiter1
   m_TagString: Untagged
@@ -110,3 +109,17 @@ Transform:
   m_Father: {fileID: 8970975684878140884}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &970452280155900742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970975685061314420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da03b3b9fa8983d44ac5d5b49024fe60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_projectilePrefab: {fileID: -1293779299057387050, guid: f2662e0e99901ab49b7f44497142e5c3,
+    type: 3}

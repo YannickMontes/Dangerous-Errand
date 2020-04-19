@@ -100,10 +100,10 @@ public class Player : Character
 				ProjectileEmmiterPowerUp projEmmiterPowerUp = powerUp as ProjectileEmmiterPowerUp;
 				if (projEmmiterPowerUp != null)
 				{
-					foreach (GameObject emmiter in projEmmiterPowerUp.Emmiters)
+					foreach (Emmiter emmiter in projEmmiterPowerUp.Emmiters)
 					{
 						hasShootedWithPowerUp = true;
-						Projectile projectile = ResourceManager.Instance.AcquireInstance(Asset.DefaultProjectile, emmiter.transform);
+						Projectile projectile = ResourceManager.Instance.AcquireInstance(emmiter.ProjectilePrefab, emmiter.transform);
 						projectile.transform.SetParent(null);
 					}
 				}

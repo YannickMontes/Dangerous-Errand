@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ProjectileEmmiterPowerUp : PowerUp
 {
-	public IReadOnlyList<GameObject> Emmiters { get { return m_emmiterHandler.Emitters; } }
+	public IReadOnlyList<Emmiter> Emmiters { get { return m_emmiterHandler.Emitters; } }
 
 	public override void StartPowerUp(Player player)
 	{

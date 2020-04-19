@@ -35,9 +35,9 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 			float elapsedTime = 0.0f;
 			while (projBehaviour.ActiveTime == -1 || elapsedTime < projBehaviour.ActiveTime)
 			{
-				foreach (GameObject emmiter in m_currentBehaviour.Emitters)
+				foreach (Emmiter emmiter in m_currentBehaviour.Emitters)
 				{
-					Projectile proj = ResourceManager.Instance.AcquireInstance(m_currentBehaviour.ProjectilePrefab, emmiter.transform);
+					Projectile proj = ResourceManager.Instance.AcquireInstance(emmiter.ProjectilePrefab, emmiter.transform);
 					proj.transform.SetParent(null); //Deparent it to avoid problems
 				}
 				enemy.PlayShootAnim();

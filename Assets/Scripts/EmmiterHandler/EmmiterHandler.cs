@@ -5,8 +5,7 @@ using UnityEngine;
 
 public abstract class EmmiterHandler : MonoBehaviour
 {
-	public IReadOnlyList<GameObject> Emitters { get { return m_emitters; } }
-	public Projectile ProjectilePrefab { get { return m_projectilePrefab; } }
+	public IReadOnlyList<Emmiter> Emitters { get { return m_emitters; } }
 
 	public virtual void StartBehaviour()
 	{
@@ -41,9 +40,7 @@ public abstract class EmmiterHandler : MonoBehaviour
 	protected abstract void DoTreatment();
 
 	[SerializeField]
-	private List<GameObject> m_emitters = new List<GameObject>();
-	[SerializeField]
-	private Projectile m_projectilePrefab = null;
+	private List<Emmiter> m_emitters = new List<Emmiter>();
 	[SerializeField]
 	protected Transform m_emmiterParent = null;
 
