@@ -4,9 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+	public enum State
+	{
+		DEFAULT,
+		VICTORY,
+		GAME_OVER
+	}
+
+	public delegate void OnState(State evt);
+
 	public static GameManager Instance { get { return s_instance; } }
 	public Player Player { get { return m_playerInstance; } }
 	public float MaxContaminationValue { get { return m_maxContaminationValue; } }
+	public State CurrentState { get { return m_currentState; } }
+
+	public void RegisterStateListener(OnState listener, bool register)
+	{
+		if (register)
+		{
+			m_onEventListeners += listener;
+		}
+		else
+		{
+			m_onEventListeners -= listener;
+		}
+	}
 
 	#region Private
 
@@ -25,6 +47,30 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	private void Start()
+	{
+		Player.RegisterContaminationValueChangedListener(OnPlayerContaminationChanged, true);
+		ChangeState(State.DEFAULT);
+	}
+
+	private void OnPlayerContaminationChanged(float oldValue, float newValue)
+	{
+		if (newValue >= m_maxContaminationValue)
+		{
+			Debug.Log("Covid-19 get your fat ass modafucka");
+			ChangeState(State.GAME_OVER);
+		}
+	}
+
+	private void ChangeState(State evt)
+	{
+		if (evt != m_currentState)
+		{
+			m_currentState = evt;
+			m_onEventListeners?.Invoke(m_currentState);
+		}
+	}
+
 	[SerializeField]
 	private Player m_playerPrefab = null;
 	[SerializeField]
@@ -36,6 +82,8 @@ public class GameManager : MonoBehaviour
 
 	private Player m_playerInstance = null;
 	private static GameManager s_instance = null;
+	private OnState m_onEventListeners = null;
+	private State m_currentState = default(State);
 
 	#endregion Private
 }

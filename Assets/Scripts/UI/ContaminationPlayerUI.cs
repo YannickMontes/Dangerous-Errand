@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class ContaminationPlayerUI : MonoBehaviour
 {
-	private void Start()
+	private void OnEnable()
 	{
 		GameManager.Instance.Player.RegisterContaminationValueChangedListener(OnPlayerContaminationChanged, true);
 		OnPlayerContaminationChanged(GameManager.Instance.Player.ContaminationValue, GameManager.Instance.Player.ContaminationValue);
 	}
 
-	private void OnDestroy()
+	private void OnDisable()
 	{
+		StopAllCoroutines();
 		GameManager.Instance.Player.RegisterContaminationValueChangedListener(OnPlayerContaminationChanged, false);
 	}
 
