@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class RotateProjectileHandler : ProjectileHandler
+public class RotateEmmiterHandler : EmmiterHandler
 {
 	[Serializable]
 	public enum Behaviour

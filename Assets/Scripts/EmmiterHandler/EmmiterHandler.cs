@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ProjectileHandler : MonoBehaviour
+public abstract class EmmiterHandler : MonoBehaviour
 {
 	public IReadOnlyList<GameObject> Emitters { get { return m_emitters; } }
 	public Projectile ProjectilePrefab { get { return m_projectilePrefab; } }

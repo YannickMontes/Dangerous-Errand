@@ -31,7 +31,7 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 		while (m_coroutineRunning)
 		{
 			EnemyBehaviourAsset.ProjectileBehaviour projBehaviour = Asset.ProjectileBehaviours[m_currentIndex];
-			m_currentBehaviour = ResourceManager.Instance.AcquireInstance(projBehaviour.ProjectileHandlerPrefab, enemy.transform);
+			m_currentBehaviour = ResourceManager.Instance.AcquireInstance(projBehaviour.EmmiterHandlerPrefab, enemy.transform);
 			float elapsedTime = 0.0f;
 			while (projBehaviour.ActiveTime == -1 || elapsedTime < projBehaviour.ActiveTime)
 			{
@@ -61,5 +61,5 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 
 	private int m_currentIndex = 0;
 	private bool m_coroutineRunning = false;
-	private ProjectileHandler m_currentBehaviour = null;
+	private EmmiterHandler m_currentBehaviour = null;
 }
