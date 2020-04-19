@@ -11,6 +11,8 @@ TagManager:
   - RightBorder
   - LeftBorder
   - Shield
+  - EnemyActivator
+  - ProjectilesBox
   layers:
   - Default
   - TransparentFX

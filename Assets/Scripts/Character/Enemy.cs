@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-
-//using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class Enemy : Character
@@ -51,17 +48,31 @@ public class Enemy : Character
 		}
 	}
 
-	protected override void Start()
+	protected void StartBehaviours()
 	{
-		base.Start();
-		foreach (EnemyBehaviour behaviour in m_behaviours)
+		if (!m_behaviourStarted)
 		{
-			behaviour.StartBehaviour(this);
+			m_behaviourStarted = true;
+			foreach (EnemyBehaviour behaviour in m_behaviours)
+			{
+				behaviour.StartBehaviour(this);
+			}
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.tag == "EnemyActivator")
+		{
+			StartBehaviours();
 		}
 	}
 
 	[SerializeField]
 	private List<EnemyBehaviour> m_behaviours = new List<EnemyBehaviour>();
+
+	[NonSerialized]
+	private bool m_behaviourStarted = false;
 
 	#endregion Private
 }

@@ -12,7 +12,7 @@ public class PlayerProjectile : Projectile
 		{
 			Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 			enemy.DecreaseContamination(m_contaminationValue);
-			ResourceManager.Instance.ReleaseInstance(gameObject);
+			ReleaseProjectile();
 		}
 		else //Putting it on a else to avoid double release
 		{

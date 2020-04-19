@@ -975,9 +975,8 @@ Transform:
   - {fileID: 389421377}
   - {fileID: 570290484}
   - {fileID: 71084751}
-  - {fileID: 1716832515}
   m_Father: {fileID: 519420032}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350773655
 GameObject:
@@ -1607,6 +1606,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a66b455d7cc0dfd4199f02a9c5ba2400, type: 3}
+--- !u!1 &501227084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501227085}
+  - component: {fileID: 501227086}
+  m_Layer: 0
+  m_Name: ProjectilesLimit
+  m_TagString: ProjectilesBox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &501227085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501227084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &501227086
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501227084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 120, y: 100}
+  m_EdgeRadius: 0
 --- !u!1001 &514106108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1779,6 +1835,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 501227085}
+  - {fileID: 1716832515}
   - {fileID: 325265990}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -4643,9 +4701,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1716832515}
   - component: {fileID: 1716832516}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: EnemyActivator
-  m_TagString: TopBorder
+  m_TagString: EnemyActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4657,12 +4715,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716832514}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 34.49, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 51.9, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 325265990}
-  m_RootOrder: 4
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1716832516
 BoxCollider2D:
@@ -4674,7 +4732,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4688,7 +4746,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 200, y: 4}
+  m_Size: {x: 200, y: 43.38}
   m_EdgeRadius: 0
 --- !u!1 &1754320742
 GameObject:
@@ -5794,6 +5852,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
+        type: 3}
+      propertyPath: m_objectsToPool.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
+        type: 3}
+      propertyPath: m_objectsToPool.Array.data[2].Prefab
+      value: 
+      objectReference: {fileID: 2865590342485726717, guid: 38bcc4b4717d8af418994183f64e7c1d,
+        type: 3}
+    - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
+        type: 3}
+      propertyPath: m_objectsToPool.Array.data[2].Size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
+        type: 3}
+      propertyPath: m_objectsToPool.Array.data[0].Size
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6904970874573528436, guid: f0cb4d400486c414a9a0900f17c8858f,
         type: 3}

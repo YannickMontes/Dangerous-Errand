@@ -19,13 +19,13 @@ public class EnemyProjectile : Projectile
 			bool received = player.ReceiveProjectile(this);
 			if (received)
 			{
-				ResourceManager.Instance.ReleaseInstance(gameObject);
+				ReleaseProjectile();
 			}
 		}
 		else if (shield != null)
 		{
 			shield.BreakShield();
-			ResourceManager.Instance.ReleaseInstance(gameObject);
+			ReleaseProjectile();
 		}
 		else
 		{

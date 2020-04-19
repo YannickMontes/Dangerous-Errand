@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
 
 	private void OnEnable()
 	{
+		m_isReleased = false;
 		Invoke("ReleaseProjectile", m_lifeTime);
 	}
 
@@ -26,17 +27,25 @@ public class Projectile : MonoBehaviour
 
 	protected virtual void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag.Contains("Border"))
+	}
+
+	protected virtual void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.tag == "ProjectilesBox")
 		{
-			ResourceManager.Instance.ReleaseInstance(gameObject);
+			ReleaseProjectile();
 		}
 	}
 
-	private void ReleaseProjectile()
+	protected void ReleaseProjectile()
 	{
-		if (gameObject.activeInHierarchy)
+		if (!m_isReleased)
 		{
-			ResourceManager.Instance.ReleaseInstance(gameObject);
+			m_isReleased = true;
+			if (gameObject.activeInHierarchy)
+			{
+				ResourceManager.Instance.ReleaseInstance(gameObject);
+			}
 		}
 	}
 
@@ -48,6 +57,8 @@ public class Projectile : MonoBehaviour
 	private float m_lifeTime = 5.0f;
 	[NonSerialized]
 	private Vector3 m_direction = Vector2.up;
+	[NonSerialized]
+	private bool m_isReleased = true;
 
 	#endregion Private
 }
