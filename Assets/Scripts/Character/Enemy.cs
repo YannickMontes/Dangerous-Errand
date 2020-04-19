@@ -19,10 +19,7 @@ public class Enemy : Character
 			{
 				ScoringManager.Instance.IncreaseScore(Asset.KillScore);
 				m_animator.SetBool("Healed", true);
-				foreach (EnemyBehaviour behaviour in m_behaviours)
-				{
-					behaviour.StopBehaviour(this);
-				}
+				StopBehaviours();
 			}
 		}
 	}
@@ -48,6 +45,12 @@ public class Enemy : Character
 		}
 	}
 
+	protected override void OnDestroy()
+	{
+		base.OnDestroy();
+		GameManager.Instance.RegisterStateListener(OnGameManagerStateChanged, true);
+	}
+
 	protected void StartBehaviours()
 	{
 		if (!m_behaviourStarted)
@@ -60,11 +63,35 @@ public class Enemy : Character
 		}
 	}
 
+	protected void StopBehaviours()
+	{
+		if (m_behaviourStarted)
+		{
+			m_behaviourStarted = false;
+			foreach (EnemyBehaviour behaviour in m_behaviours)
+			{
+				behaviour.StopBehaviour(this);
+			}
+		}
+	}
+
+	private void OnGameManagerStateChanged(GameManager.State newState)
+	{
+		if (newState != GameManager.State.DEFAULT && m_behaviourStarted)
+		{
+			StopBehaviours();
+		}
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "EnemyActivator")
 		{
 			StartBehaviours();
+		}
+		else if (collision.tag == "EnemyDeactivator")
+		{
+			StopBehaviours();
 		}
 	}
 

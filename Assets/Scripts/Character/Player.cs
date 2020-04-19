@@ -123,6 +123,10 @@ public class Player : Character
 
 	private void FixedUpdate()
 	{
+		if (GameManager.Instance.CurrentState != GameManager.State.DEFAULT)
+		{
+			m_horizontalSpeed = m_verticalSpeed = 0.0f;
+		}
 		if (m_horizontalSpeed != 0 || m_verticalSpeed != 0)
 		{
 			transform.Translate(new Vector2(m_horizontalSpeed, m_verticalSpeed));

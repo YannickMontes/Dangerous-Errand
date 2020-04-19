@@ -13,6 +13,7 @@ TagManager:
   - Shield
   - EnemyActivator
   - ProjectilesBox
+  - EnemyDeactivator
   layers:
   - Default
   - TransparentFX

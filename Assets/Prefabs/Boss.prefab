@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5530225390391407844}
   - component: {fileID: 1484158005002643774}
-  - component: {fileID: 653453414996246187}
   - component: {fileID: 8284377661484523500}
   m_Layer: 0
   m_Name: Middle
@@ -85,19 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &653453414996246187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3990042016041744352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a456cada4d14e4d4692778910377ad88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_asset: {fileID: 11400000, guid: b1663bd498b7d4a4b90f3119fca848b9, type: 2}
 --- !u!95 &8284377661484523500
 Animator:
   serializedVersion: 3
@@ -210,7 +196,7 @@ GameObject:
   - component: {fileID: 5994447229553997341}
   - component: {fileID: 5994447229553997340}
   - component: {fileID: 5994447229553997343}
-  - component: {fileID: 8304477378359768438}
+  - component: {fileID: 1305633356766755351}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Enemy
@@ -246,7 +232,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14285946, y: 0.17149162}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -257,7 +243,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 8.857243, y: 9.144809}
   m_EdgeRadius: 0
 --- !u!50 &5994447229553997343
 Rigidbody2D:
@@ -280,7 +266,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8304477378359768438
+--- !u!114 &1305633356766755351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a456cada4d14e4d4692778910377ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_asset: {fileID: 11400000, guid: 4a06958113124144a96a1d2486f9bc01, type: 2}
+  m_asset: {fileID: 11400000, guid: b1663bd498b7d4a4b90f3119fca848b9, type: 2}
 --- !u!1 &8111564045382545757
 GameObject:
   m_ObjectHideFlags: 0

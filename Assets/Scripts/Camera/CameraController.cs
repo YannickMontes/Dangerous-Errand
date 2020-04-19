@@ -44,12 +44,14 @@ public class CameraController : MonoBehaviour
 
 	private void Update()
 	{
-		Debug.DrawLine(transform.position, transform.position + (Vector3.forward * 5), Color.red, 2.0f);
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 15.0f, m_camControlMask);
-		if (hit.collider != null)
+		if (m_currentSpeed != 0)
 		{
-			hit.collider.gameObject.GetComponent<CameraControlPoint>().Apply();
-			Debug.Log("ACQUI DENTRO");
+			Debug.DrawLine(transform.position, transform.position + (Vector3.forward * 5), Color.red, 2.0f);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 15.0f, m_camControlMask);
+			if (hit.collider != null)
+			{
+				hit.collider.gameObject.GetComponent<CameraControlPoint>().Apply();
+			}
 		}
 	}
 

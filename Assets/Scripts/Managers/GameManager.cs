@@ -53,6 +53,17 @@ public class GameManager : MonoBehaviour
 		ChangeState(State.DEFAULT);
 	}
 
+	private void Update()
+	{
+		if (CurrentState == State.DEFAULT)
+		{
+			if (!m_enemyToKill.IsAlive)
+			{
+				ChangeState(State.VICTORY);
+			}
+		}
+	}
+
 	private void OnPlayerContaminationChanged(float oldValue, float newValue)
 	{
 		if (newValue >= m_maxContaminationValue)
@@ -84,6 +95,10 @@ public class GameManager : MonoBehaviour
 	[Header("Game Constants")]
 	[SerializeField]
 	private float m_maxContaminationValue = 100.0f;
+
+	[Header("Victory conditions")]
+	[SerializeField]
+	private Enemy m_enemyToKill = null;
 
 	private Player m_playerInstance = null;
 	private static GameManager s_instance = null;
