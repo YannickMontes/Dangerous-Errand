@@ -35,7 +35,6 @@ public class Enemy : Character
 	protected override void Awake()
 	{
 		base.Awake();
-		m_animator = GetComponent<Animator>();
 		foreach (EnemyBehaviourAsset behaviourAsset in Asset.DefaultBehaviours)
 		{
 			m_behaviours.Add(behaviourAsset.CreateBehaviour());
@@ -53,9 +52,6 @@ public class Enemy : Character
 
 	[SerializeField]
 	private List<EnemyBehaviour> m_behaviours = new List<EnemyBehaviour>();
-
-	[NonSerialized]
-	private Animator m_animator = null;
 
 	#endregion Private
 }

@@ -1346,6 +1346,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &897707292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5994447229553997331, guid: f3ea2830095dabe4cb989ae958840265,
+    type: 3}
+  m_PrefabInstance: {fileID: 5994447229625381813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &897707293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897707292}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bbc3b00ecc3c384e99b48bb92b34873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &924583329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,6 +2828,32 @@ PrefabInstance:
     - target: {fileID: 5994447228929885444, guid: f3ea2830095dabe4cb989ae958840265,
         type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994447228929885444, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c63fc78b2b76ea04ba3ba3bfef348ed8,
+        type: 3}
+    - target: {fileID: 5994447228929885444, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994447228929885444, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994447228929885444, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994447228929885444, guid: f3ea2830095dabe4cb989ae958840265,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5994447228929885466, guid: f3ea2830095dabe4cb989ae958840265,

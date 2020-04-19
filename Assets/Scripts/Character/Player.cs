@@ -7,9 +7,17 @@ public class Player : Character
 {
 	public new PlayerAsset Asset { get { return base.Asset as PlayerAsset; } }
 
-	public void IncreaseContamination(int value)
+	public bool ReceiveProjectile(EnemyProjectile projectile)
 	{
-		m_contamination += value;
+		if (!m_isHit)
+		{
+			m_isHit = true;
+			IncreaseContamination(projectile.ContaminationValue);
+			m_animator.SetBool("Hit", true);
+			Invoke("DisableHitStun", projectile.HitStun);
+			return true;
+		}
+		return false;
 	}
 
 	#region Private
@@ -86,6 +94,11 @@ public class Player : Character
 		}
 	}
 
+	private void IncreaseContamination(int value)
+	{
+		m_contamination += value;
+	}
+
 	private IEnumerator WaitCanShoot()
 	{
 		yield return new WaitForSeconds(Asset.TimeBetweenShoot);
@@ -104,6 +117,12 @@ public class Player : Character
 		return false;
 	}
 
+	private void DisableHitStun()
+	{
+		m_isHit = false;
+		m_animator.SetBool("Hit", false);
+	}
+
 	[NonSerialized]
 	private float m_horizontalSpeed = 0.0f;
 
@@ -112,6 +131,8 @@ public class Player : Character
 
 	[NonSerialized]
 	private bool m_canShoot = true;
+	[NonSerialized]
+	private bool m_isHit = false;
 	[NonSerialized]
 	private List<GameObject> m_borderColliding = new List<GameObject>();
 
