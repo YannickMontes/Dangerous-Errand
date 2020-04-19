@@ -12,6 +12,6 @@ public abstract class EnemyBehaviourAsset : ScriptableObject
 	{
 		public float ActiveTime = 5.0f;
 		public float ShootTime = 0.5f;
-		public ProjectileHandler ProjectileHandlerPrefab = null;
+		public EmmiterHandler EmmiterHandlerPrefab = null;
 	}
 }

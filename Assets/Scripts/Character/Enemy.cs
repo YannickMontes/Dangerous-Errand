@@ -52,9 +52,6 @@ public class Enemy : Character
 	}
 
 	[SerializeField]
-	private List<ProjectileHandler> m_allProjectilesHandler = new List<ProjectileHandler>();
-
-	[SerializeField]
 	private List<EnemyBehaviour> m_behaviours = new List<EnemyBehaviour>();
 
 	[NonSerialized]

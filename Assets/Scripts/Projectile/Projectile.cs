@@ -14,6 +14,11 @@ public class Projectile : MonoBehaviour
 		Invoke("ReleaseProjectile", m_lifeTime);
 	}
 
+	private void OnDisable()
+	{
+		CancelInvoke();
+	}
+
 	private void FixedUpdate()
 	{
 		transform.Translate(Vector3.up * m_speed);
