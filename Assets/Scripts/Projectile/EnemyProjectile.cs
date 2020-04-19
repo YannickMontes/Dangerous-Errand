@@ -12,6 +12,7 @@ public class EnemyProjectile : Projectile
 
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
+		Shield shield = collision.GetComponent<Shield>();
 		if (collision.tag == "Player")
 		{
 			Player player = collision.gameObject.GetComponent<Player>();
@@ -21,9 +22,9 @@ public class EnemyProjectile : Projectile
 				ResourceManager.Instance.ReleaseInstance(gameObject);
 			}
 		}
-		else if (collision.tag == "Shield")
+		else if (shield != null)
 		{
-			collision.gameObject.SetActive(false);
+			shield.BreakShield();
 			ResourceManager.Instance.ReleaseInstance(gameObject);
 		}
 		else
