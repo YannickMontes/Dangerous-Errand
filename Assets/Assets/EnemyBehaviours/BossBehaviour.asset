@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f77ac71d0c62214ea243985fae7d644, type: 3}
-  m_Name: BasicEnemyBehaviour
+  m_Name: BossBehaviour
   m_EditorClassIdentifier: 
   m_projectileBehaviours:
-  - ActiveTime: -1
-    ShootTime: 2
-    EmmiterHandlerPrefab: {fileID: 7920236244404345125, guid: a1ecb8e8e77b1834c8753442b9f06e37,
+  - ActiveTime: 5
+    ShootTime: 1
+    EmmiterHandlerPrefab: {fileID: 4862823397675524776, guid: 65d4d6498ad41d645b76752cae974f48,
+      type: 3}
+  - ActiveTime: 3
+    ShootTime: 0.5
+    EmmiterHandlerPrefab: {fileID: 8970975684836964450, guid: 0bb10bc86aeef1e4f9d27ed59e7ae8b5,
       type: 3}
   m_waitTime: 1
