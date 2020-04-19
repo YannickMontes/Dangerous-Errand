@@ -21,6 +21,11 @@ public class EnemyProjectile : Projectile
 				ResourceManager.Instance.ReleaseInstance(gameObject);
 			}
 		}
+		else if (collision.tag == "Shield")
+		{
+			collision.gameObject.SetActive(false);
+			ResourceManager.Instance.ReleaseInstance(gameObject);
+		}
 		else
 		{
 			base.OnTriggerEnter2D(collision);

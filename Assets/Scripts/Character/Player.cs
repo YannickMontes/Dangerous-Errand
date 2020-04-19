@@ -20,6 +20,14 @@ public class Player : Character
 		return false;
 	}
 
+	public void CollectPowerUp(PowerUp powerUp)
+	{
+		powerUp.transform.SetParent(transform);
+		powerUp.transform.position = transform.position;
+		powerUp.transform.rotation = transform.rotation;
+		powerUp.StartPowerUp(this);
+	}
+
 	#region Private
 
 	protected override void Start()

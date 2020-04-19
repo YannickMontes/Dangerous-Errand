@@ -10,6 +10,7 @@ TagManager:
   - BotBorder
   - RightBorder
   - LeftBorder
+  - Shield
   layers:
   - Default
   - TransparentFX
