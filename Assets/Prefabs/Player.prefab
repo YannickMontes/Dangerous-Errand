@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_asset: {fileID: 11400000, guid: fd96196a452d87a49b2706d453dadd44, type: 2}
+  m_playerHitSound: {fileID: 8300000, guid: e938800dda82c034e8f65fd620b89f0c, type: 3}
 --- !u!61 &5994447229553997340
 BoxCollider2D:
   m_ObjectHideFlags: 0

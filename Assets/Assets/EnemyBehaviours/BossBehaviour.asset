@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BossBehaviour
   m_EditorClassIdentifier: 
   m_projectileBehaviours:
-  - ActiveTime: 5
-    ShootTime: 1
+  - ActiveTime: 3
+    ShootTime: 0.2
     EmmiterHandlerPrefab: {fileID: 8970975684836964450, guid: d0ac0a421d325c746a0edac09de23031,
       type: 3}
   - ActiveTime: 3

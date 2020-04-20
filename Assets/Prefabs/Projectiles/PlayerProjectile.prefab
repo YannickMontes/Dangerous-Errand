@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 1
   m_contaminationValue: 3
-  m_lifeTime: 5
+  m_lifeTime: 2
   m_sounds:
   - {fileID: 8300000, guid: 3257e461e2c3d7040b9b473bcc13df32, type: 3}
   - {fileID: 8300000, guid: 551baed04223cbe418eec5fb8df83698, type: 3}
