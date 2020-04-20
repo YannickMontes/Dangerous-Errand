@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerAsset
   m_EditorClassIdentifier: 
   m_baseContamination: 0
-  m_speed: 1
-  m_timeBetweenShoot: 1
+  m_speed: 0.8
+  m_timeBetweenShoot: 0.7
   m_defaultProjectilePrefab: {fileID: 4321681708115817416, guid: b1c4385842cfe5e4e8b0195ac880fb0e,
     type: 3}
   m_horizontalInputType: 0

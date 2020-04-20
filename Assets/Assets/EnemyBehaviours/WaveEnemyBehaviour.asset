@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_projectileBehaviours:
   - ActiveTime: -1
-    ShootTime: 0.2
+    ShootTime: 0.25
     EmmiterHandlerPrefab: {fileID: 8970975684836964450, guid: 0bb10bc86aeef1e4f9d27ed59e7ae8b5,
       type: 3}
   m_waitTime: 1
