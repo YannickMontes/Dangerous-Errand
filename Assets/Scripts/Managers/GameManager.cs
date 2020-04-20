@@ -65,10 +65,14 @@ public class GameManager : MonoBehaviour
 	{
 		if (CurrentState == State.DEFAULT)
 		{
-			if (!m_enemyToKill.IsAlive)
+			foreach (Enemy enemy in m_enemyToKill)
 			{
-				ChangeState(State.VICTORY);
+				if (enemy.IsAlive)
+				{
+					return;
+				}
 			}
+			ChangeState(State.VICTORY);
 		}
 	}
 
@@ -115,7 +119,7 @@ public class GameManager : MonoBehaviour
 
 	[Header("Victory conditions")]
 	[SerializeField]
-	private Enemy m_enemyToKill = null;
+	private List<Enemy> m_enemyToKill = new List<Enemy>();
 
 	[Header("Sounds")]
 	[SerializeField]
