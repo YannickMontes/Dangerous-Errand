@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 1
-  m_contaminationValue: 3
+  m_contaminationValue: 1
   m_lifeTime: 5
   m_sounds:
   - {fileID: 8300000, guid: dfe91712f06013b43a6c311a99e1fe12, type: 3}
