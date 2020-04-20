@@ -29,6 +29,8 @@ public class Shield : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (!gameObject.activeInHierarchy)
+			return;
 		if (collision.tag == "Enemy")
 		{
 			Enemy enemy = collision.GetComponent<Enemy>();

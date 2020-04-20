@@ -12,6 +12,8 @@ public class EnemyProjectile : Projectile
 
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (!gameObject.activeInHierarchy)
+			return;
 		Shield shield = collision.GetComponent<Shield>();
 		if (collision.tag == "Player")
 		{
