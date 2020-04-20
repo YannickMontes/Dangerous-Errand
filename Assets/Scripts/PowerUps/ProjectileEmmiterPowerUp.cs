@@ -10,6 +10,7 @@ public class ProjectileEmmiterPowerUp : PowerUp
 	public override void StartPowerUp(Player player)
 	{
 		base.StartPowerUp(player);
+		m_associatedPlayer = player;
 		if (m_activeTime != -1)
 		{
 			Invoke("DisablePowerUp", m_activeTime);
