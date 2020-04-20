@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e72384ad908e341b35a1789fff343a, type: 3}
   m_Name: BossAsset
   m_EditorClassIdentifier: 
-  m_baseContamination: 50
+  m_baseContamination: 75
   m_speed: 2
   m_timeBetweenShoot: 2
   m_defaultProjectilePrefab: {fileID: -1293779299057387050, guid: f2662e0e99901ab49b7f44497142e5c3,
     type: 3}
   m_defaultBehaviours:
   - {fileID: 11400000, guid: ec8ba4d1238c245428bb2713c2c4993b, type: 2}
-  m_killScore: 10
+  m_killScore: 500

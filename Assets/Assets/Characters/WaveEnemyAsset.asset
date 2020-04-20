@@ -19,3 +19,4 @@ MonoBehaviour:
     type: 3}
   m_defaultBehaviours:
   - {fileID: 11400000, guid: 132ef45a7a6ab7d49b8a323548568c68, type: 2}
+  m_killScore: 50

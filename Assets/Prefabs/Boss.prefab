@@ -437,7 +437,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_asset
       value: 
-      objectReference: {fileID: 11400000, guid: 68f31d26744ccf8458378900e5ebdd52,
+      objectReference: {fileID: 11400000, guid: 70b1c22326ca05b48a0aab034c071b97,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a66b455d7cc0dfd4199f02a9c5ba2400, type: 3}
@@ -522,7 +522,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_asset
       value: 
-      objectReference: {fileID: 11400000, guid: f2a325d56876dd549975f77bc729fd25,
+      objectReference: {fileID: 11400000, guid: 70b1c22326ca05b48a0aab034c071b97,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a66b455d7cc0dfd4199f02a9c5ba2400, type: 3}
