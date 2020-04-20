@@ -224,7 +224,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ca182c018eac16545b0f779ea34a6a27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_groundPowerUpVisual: {fileID: 2335459648018086757}
+  m_pickUpScore: 10
   m_rotateEmmiter: {fileID: 2335459649550102878}
   m_shields:
   - {fileID: 2335459649466334741}
@@ -766,7 +767,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_emitters: []
-  m_projectilePrefab: {fileID: 0}
   m_emmiterParent: {fileID: 2335459648427979852}
   m_behaviour: 2
   m_beginPoint: {fileID: 2335459648843339214}

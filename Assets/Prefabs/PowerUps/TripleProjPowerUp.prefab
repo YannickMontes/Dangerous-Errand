@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_groundPowerUpVisual: {fileID: 2037894373129805698}
-  m_activeTime: -1
+  m_pickUpScore: 10
+  m_activeTime: 5
   m_emmiterHandler: {fileID: 7317017022025381140}
 --- !u!212 &917659921601698369
 SpriteRenderer:
