@@ -47,6 +47,14 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	private void OnDestroy()
+	{
+		if (s_instance == this)
+		{
+			s_instance = null;
+		}
+	}
+
 	private void Start()
 	{
 		Player.RegisterContaminationValueChangedListener(OnPlayerContaminationChanged, true);
@@ -84,6 +92,15 @@ public class GameManager : MonoBehaviour
 			{
 				InputManager.Instance.gameObject.SetActive(false);
 			}
+
+			if (m_currentState == State.VICTORY)
+			{
+				ResourceManager.Instance.AcquireAudioSourceInstance(Player.transform, m_winSound);
+			}
+			if (m_currentState == State.GAME_OVER)
+			{
+				ResourceManager.Instance.AcquireAudioSourceInstance(Player.transform, m_defeatSound);
+			}
 		}
 	}
 
@@ -99,6 +116,12 @@ public class GameManager : MonoBehaviour
 	[Header("Victory conditions")]
 	[SerializeField]
 	private Enemy m_enemyToKill = null;
+
+	[Header("Sounds")]
+	[SerializeField]
+	private AudioClip m_winSound = null;
+	[SerializeField]
+	private AudioClip m_defeatSound = null;
 
 	private Player m_playerInstance = null;
 	private static GameManager s_instance = null;

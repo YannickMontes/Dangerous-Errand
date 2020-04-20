@@ -66,6 +66,14 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
+	private void OnDestroy()
+	{
+		if (s_instance == this)
+		{
+			s_instance = null;
+		}
+	}
+
 	private void Update()
 	{
 		float horizontalInputRaw = Input.GetAxisRaw("Horizontal");
