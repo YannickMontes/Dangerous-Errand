@@ -17,6 +17,7 @@ public class Enemy : Character
 			m_contaminationValueListeners?.Invoke(oldValue, m_contamination);
 			if (m_contamination <= 0)
 			{
+				PlaySound(m_healedSound);
 				ScoringManager.Instance.IncreaseScore(Asset.KillScore);
 				m_animator.SetBool("Healed", true);
 				StopBehaviours();
@@ -97,6 +98,8 @@ public class Enemy : Character
 
 	[SerializeField]
 	private List<EnemyBehaviour> m_behaviours = new List<EnemyBehaviour>();
+	[SerializeField]
+	private AudioClip m_healedSound = null;
 
 	[NonSerialized]
 	private bool m_behaviourStarted = false;

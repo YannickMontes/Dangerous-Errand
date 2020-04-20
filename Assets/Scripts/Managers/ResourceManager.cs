@@ -20,6 +20,8 @@ public class ResourceManager : MonoBehaviour
 
 	public AudioSound AcquireAudioSourceInstance(Transform parent, AudioClip clip)
 	{
+		if (clip == null)
+			return null;
 		AudioSound sound = ResourceManager.Instance.AcquireInstance(m_audioSourcePrefab, parent);
 		sound.PlayClip(clip);
 		return sound;
