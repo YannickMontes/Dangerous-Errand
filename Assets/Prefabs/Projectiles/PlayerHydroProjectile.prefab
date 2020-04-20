@@ -18,6 +18,8 @@ MonoBehaviour:
   m_sounds:
   - {fileID: 8300000, guid: dfe91712f06013b43a6c311a99e1fe12, type: 3}
   - {fileID: 8300000, guid: 6de18d2ed47256345971fad79936445a, type: 3}
+  m_touchEnemy: 0
+  m_touchProjectiles: 1
 --- !u!1 &4033138466702657104
 GameObject:
   m_ObjectHideFlags: 0

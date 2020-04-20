@@ -19,6 +19,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3257e461e2c3d7040b9b473bcc13df32, type: 3}
   - {fileID: 8300000, guid: 551baed04223cbe418eec5fb8df83698, type: 3}
   - {fileID: 8300000, guid: e598b2336765d324e88f2e6b71e82057, type: 3}
+  m_touchEnemy: 1
+  m_touchProjectiles: 0
 --- !u!1 &4033138466702657104
 GameObject:
   m_ObjectHideFlags: 0

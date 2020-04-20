@@ -12,10 +12,23 @@ public class Projectile : MonoBehaviour
 		return m_sounds.Count > 0 ? m_sounds[UnityEngine.Random.Range(0, m_sounds.Count)] : null;
 	}
 
+	public void ReleaseProjectile()
+	{
+		if (!m_isReleased)
+		{
+			m_isReleased = true;
+			if (gameObject.activeInHierarchy)
+			{
+				ResourceManager.Instance.ReleaseInstance(gameObject);
+			}
+		}
+	}
+
 	#region Private
 
 	private void Awake()
 	{
+		m_collider = GetComponent<BoxCollider2D>();
 	}
 
 	private void OnEnable()
@@ -46,18 +59,6 @@ public class Projectile : MonoBehaviour
 		}
 	}
 
-	protected void ReleaseProjectile()
-	{
-		if (!m_isReleased)
-		{
-			m_isReleased = true;
-			if (gameObject.activeInHierarchy)
-			{
-				ResourceManager.Instance.ReleaseInstance(gameObject);
-			}
-		}
-	}
-
 	[SerializeField]
 	private float m_speed = 1.0f;
 	[SerializeField]
@@ -71,6 +72,8 @@ public class Projectile : MonoBehaviour
 	private Vector3 m_direction = Vector2.up;
 	[NonSerialized]
 	private bool m_isReleased = true;
+	[NonSerialized]
+	protected BoxCollider2D m_collider = null;
 
 	#endregion Private
 }
