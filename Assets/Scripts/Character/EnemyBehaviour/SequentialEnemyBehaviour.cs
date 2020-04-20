@@ -12,13 +12,13 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 
 	public override void StartBehaviour(Enemy enemy)
 	{
-		enemy.StartCoroutine(RunBehaviour(enemy));
+		m_coroutine = RunBehaviour(enemy);
+		enemy.StartCoroutine(m_coroutine);
 	}
 
 	public override void StopBehaviour(Enemy enemy)
 	{
-		m_coroutineRunning = false;
-		enemy.StopCoroutine(RunBehaviour(enemy));
+		enemy.StopCoroutine(m_coroutine);
 		if (m_currentBehaviour != null)
 		{
 			ResourceManager.Instance.ReleaseInstance(m_currentBehaviour.gameObject);
@@ -27,8 +27,7 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 
 	private IEnumerator RunBehaviour(Enemy enemy)
 	{
-		m_coroutineRunning = true;
-		while (m_coroutineRunning)
+		while (m_coroutine != null)
 		{
 			EnemyBehaviourAsset.ProjectileBehaviour projBehaviour = Asset.ProjectileBehaviours[m_currentIndex];
 			m_currentBehaviour = ResourceManager.Instance.AcquireInstance(projBehaviour.EmmiterHandlerPrefab, enemy.transform);
@@ -48,7 +47,7 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 					enemy.PlaySound(projSound);
 				}
 				yield return new WaitForSeconds(projBehaviour.ShootTime);
-				if (!m_coroutineRunning)
+				if (m_coroutine == null)
 				{
 					yield break;
 				}
@@ -66,6 +65,6 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 	}
 
 	private int m_currentIndex = 0;
-	private bool m_coroutineRunning = false;
+	private IEnumerator m_coroutine = null;
 	private EmmiterHandler m_currentBehaviour = null;
 }
