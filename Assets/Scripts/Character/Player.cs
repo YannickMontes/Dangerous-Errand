@@ -15,7 +15,7 @@ public class Player : Character
 			IncreaseContamination(projectile.ContaminationValue);
 			m_animator.SetBool("Hit", true);
 			Invoke("DisableHitStun", projectile.HitStun);
-			ResourceManager.Instance.AcquireAudioSourceInstance(this, m_playerHitSound);
+			ResourceManager.Instance.AcquireAudioSourceInstance(transform, m_playerHitSound);
 			return true;
 		}
 		return false;
