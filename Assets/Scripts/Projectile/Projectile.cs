@@ -53,6 +53,8 @@ public class Projectile : MonoBehaviour
 
 	protected virtual void OnTriggerExit2D(Collider2D collision)
 	{
+		if (!gameObject.activeInHierarchy)
+			return;
 		if (collision.tag == "ProjectilesBox")
 		{
 			ReleaseProjectile();

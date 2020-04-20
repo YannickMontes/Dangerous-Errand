@@ -8,6 +8,8 @@ public class PlayerProjectile : Projectile
 
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (!gameObject.activeInHierarchy)
+			return;
 		if (m_touchEnemy && collision.tag == "Enemy")
 		{
 			Enemy enemy = collision.gameObject.GetComponent<Enemy>();

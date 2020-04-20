@@ -22,6 +22,8 @@ public abstract class PowerUp : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (!gameObject.activeInHierarchy)
+			return;
 		if (collision.tag == "Player")
 		{
 			collision.GetComponent<Player>().CollectPowerUp(this);

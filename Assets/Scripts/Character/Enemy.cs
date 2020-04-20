@@ -46,10 +46,16 @@ public class Enemy : Character
 		}
 	}
 
+	protected override void Start()
+	{
+		base.Start();
+		GameManager.Instance.RegisterStateListener(OnGameManagerStateChanged, true);
+	}
+
 	protected override void OnDestroy()
 	{
 		base.OnDestroy();
-		GameManager.Instance?.RegisterStateListener(OnGameManagerStateChanged, true);
+		GameManager.Instance?.RegisterStateListener(OnGameManagerStateChanged, false);
 	}
 
 	protected void StartBehaviours()
@@ -86,6 +92,8 @@ public class Enemy : Character
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (!gameObject.activeInHierarchy || GameManager.Instance.CurrentState != GameManager.State.DEFAULT)
+			return;
 		if (collision.tag == "EnemyActivator")
 		{
 			StartBehaviours();

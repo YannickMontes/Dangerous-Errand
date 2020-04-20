@@ -37,6 +37,24 @@ public class CameraController : MonoBehaviour
 		m_currentSpeed = m_defaultSpeed;
 	}
 
+	private void Start()
+	{
+		GameManager.Instance.RegisterStateListener(OnGameManagerStateChanged, true);
+	}
+
+	private void OnGameManagerStateChanged(GameManager.State state)
+	{
+		if (state != GameManager.State.DEFAULT)
+		{
+			m_currentSpeed = 0.0f;
+		}
+	}
+
+	private void OnDestroy()
+	{
+		GameManager.Instance.RegisterStateListener(OnGameManagerStateChanged, false);
+	}
+
 	private void FixedUpdate()
 	{
 		transform.Translate(new Vector2(0.0f, m_currentSpeed));
