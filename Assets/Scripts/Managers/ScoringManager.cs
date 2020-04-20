@@ -45,6 +45,10 @@ public class ScoringManager : MonoBehaviour
 	private void OnDestroy()
 	{
 		GameManager.Instance?.RegisterStateListener(OnGameManagerState, false);
+		if (s_instance == this)
+		{
+			s_instance = null;
+		}
 	}
 
 	private void OnGameManagerState(GameManager.State state)

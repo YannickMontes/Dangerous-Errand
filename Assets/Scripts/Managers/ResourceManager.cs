@@ -110,6 +110,14 @@ public class ResourceManager : MonoBehaviour
 		}
 	}
 
+	private void OnDestroy()
+	{
+		if (s_instance == this)
+		{
+			s_instance = null;
+		}
+	}
+
 	private void Init()
 	{
 		m_usedObjects = new List<PooledObject>();
