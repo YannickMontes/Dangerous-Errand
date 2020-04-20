@@ -48,7 +48,7 @@ public class Enemy : Character
 	protected override void OnDestroy()
 	{
 		base.OnDestroy();
-		GameManager.Instance.RegisterStateListener(OnGameManagerStateChanged, true);
+		GameManager.Instance?.RegisterStateListener(OnGameManagerStateChanged, true);
 	}
 
 	protected void StartBehaviours()

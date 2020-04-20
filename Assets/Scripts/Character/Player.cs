@@ -48,9 +48,9 @@ public class Player : Character
 
 	protected override void OnDestroy()
 	{
-		InputManager.Instance.RegisterOnInputAxis(Asset.HorizontalInputType, OnAxisInput, false);
-		InputManager.Instance.RegisterOnInputAxis(Asset.VerticalInputType, OnAxisInput, false);
-		InputManager.Instance.RegisterOnShootButtonDown(OnShootButtonDown, false);
+		InputManager.Instance?.RegisterOnInputAxis(Asset.HorizontalInputType, OnAxisInput, false);
+		InputManager.Instance?.RegisterOnInputAxis(Asset.VerticalInputType, OnAxisInput, false);
+		InputManager.Instance?.RegisterOnShootButtonDown(OnShootButtonDown, false);
 	}
 
 	private void OnAxisInput(InputManager.InputAxisType inputType, float value)
