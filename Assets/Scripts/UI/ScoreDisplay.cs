@@ -15,7 +15,7 @@ public class ScoreDisplay : MonoBehaviour
 
 	private void OnDisable()
 	{
-		ScoringManager.Instance.RegisterOnScoreChange(OnScoreChanged, true);
+		ScoringManager.Instance?.RegisterOnScoreChange(OnScoreChanged, true);
 	}
 
 	private void OnScoreChanged(int old, int newVal)

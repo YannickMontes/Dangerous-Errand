@@ -14,7 +14,7 @@ public class UIPage : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		GameManager.Instance.RegisterStateListener(OnGameMangerStateChanged, false);
+		GameManager.Instance?.RegisterStateListener(OnGameMangerStateChanged, false);
 	}
 
 	private void OnGameMangerStateChanged(GameManager.State evt)

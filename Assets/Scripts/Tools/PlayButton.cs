@@ -5,6 +5,6 @@ public class PlayButton : MonoBehaviour
 {
 	public void OnClick()
 	{
-		SceneManager.LoadScene("MainLevel");
+		SceneManager.LoadScene("TheTrueMainLevel");
 	}
 }

@@ -52,7 +52,7 @@ public class CameraController : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		GameManager.Instance.RegisterStateListener(OnGameManagerStateChanged, false);
+		GameManager.Instance?.RegisterStateListener(OnGameManagerStateChanged, false);
 	}
 
 	private void FixedUpdate()

@@ -196,7 +196,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &1305633356766755351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +433,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -24.9
       objectReference: {fileID: 0}
+    - target: {fileID: 5994447229553997343, guid: a66b455d7cc0dfd4199f02a9c5ba2400,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8304477378359768438, guid: a66b455d7cc0dfd4199f02a9c5ba2400,
         type: 3}
       propertyPath: m_asset
@@ -518,6 +523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 43.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994447229553997343, guid: a66b455d7cc0dfd4199f02a9c5ba2400,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8304477378359768438, guid: a66b455d7cc0dfd4199f02a9c5ba2400,
         type: 3}
