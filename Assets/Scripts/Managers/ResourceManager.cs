@@ -18,6 +18,13 @@ public class ResourceManager : MonoBehaviour
 		return instance;
 	}
 
+	public AudioSound AcquireAudioSourceInstance(Transform parent, AudioClip clip)
+	{
+		AudioSound sound = ResourceManager.Instance.AcquireInstance(m_audioSourcePrefab, parent);
+		sound.PlayClip(clip);
+		return sound;
+	}
+
 	public GameObject AcquireInstance(GameObject prefab, Transform parent, bool active = true)
 	{
 		GameObject instance = null;
@@ -119,6 +126,9 @@ public class ResourceManager : MonoBehaviour
 			m_pooledObjects[objToPool.Prefab] = pooledObj;
 		}
 	}
+
+	[SerializeField]
+	private AudioSound m_audioSourcePrefab = null;
 
 	[SerializeField]
 	private List<ObjectToPool> m_objectsToPool = new List<ObjectToPool>();

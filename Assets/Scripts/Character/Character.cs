@@ -22,6 +22,11 @@ public class Character : MonoBehaviour
 		}
 	}
 
+	public void PlaySound(AudioClip audio)
+	{
+		ResourceManager.Instance.AcquireAudioSourceInstance(transform, audio);
+	}
+
 	#region Private
 
 	protected virtual void Awake()

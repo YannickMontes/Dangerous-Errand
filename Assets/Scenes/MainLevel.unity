@@ -5830,6 +5830,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ac9dad638130cf419cb47117a5a38c8, type: 3}
+--- !u!1001 &6546950751976762742
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672105, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546950753464672106, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioSource
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2662c28cef4d1744e8d63a4b8424ab52, type: 3}
 --- !u!1001 &6904970875397238551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5895,7 +5964,7 @@ PrefabInstance:
     - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
         type: 3}
       propertyPath: m_objectsToPool.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
         type: 3}
@@ -5912,6 +5981,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_objectsToPool.Array.data[0].Size
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
+        type: 3}
+      propertyPath: m_audioSourcePrefab
+      value: 
+      objectReference: {fileID: 6546950753464672104, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+    - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
+        type: 3}
+      propertyPath: m_objectsToPool.Array.data[3].Prefab
+      value: 
+      objectReference: {fileID: 6546950753464672106, guid: 2662c28cef4d1744e8d63a4b8424ab52,
+        type: 3}
+    - target: {fileID: 6904970874573528435, guid: f0cb4d400486c414a9a0900f17c8858f,
+        type: 3}
+      propertyPath: m_objectsToPool.Array.data[3].Size
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6904970874573528436, guid: f0cb4d400486c414a9a0900f17c8858f,
         type: 3}

@@ -106,6 +106,7 @@ public class Player : Character
 						hasShootedWithPowerUp = true;
 						Projectile projectile = ResourceManager.Instance.AcquireInstance(emmiter.ProjectilePrefab, emmiter.transform);
 						projectile.transform.SetParent(null);
+						PlaySound(projectile.GetRandomAudioClip());
 					}
 				}
 			}
@@ -114,6 +115,7 @@ public class Player : Character
 			{
 				Projectile projectile = ResourceManager.Instance.AcquireInstance(Asset.DefaultProjectile, transform);
 				projectile.transform.SetParent(null);
+				PlaySound(projectile.GetRandomAudioClip());
 			}
 
 			m_canShoot = false;

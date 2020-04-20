@@ -35,12 +35,18 @@ public class SequentialEnemyBehaviour : EnemyBehaviour
 			float elapsedTime = 0.0f;
 			while (projBehaviour.ActiveTime == -1 || elapsedTime < projBehaviour.ActiveTime)
 			{
+				AudioClip projSound = null;
 				foreach (Emmiter emmiter in m_currentBehaviour.Emitters)
 				{
 					Projectile proj = ResourceManager.Instance.AcquireInstance(emmiter.ProjectilePrefab, emmiter.transform);
 					proj.transform.SetParent(null); //Deparent it to avoid problems
+					projSound = proj.GetRandomAudioClip();
 				}
 				enemy.PlayShootAnim();
+				if (projSound != null)
+				{
+					enemy.PlaySound(projSound);
+				}
 				yield return new WaitForSeconds(projBehaviour.ShootTime);
 				if (!m_coroutineRunning)
 				{
