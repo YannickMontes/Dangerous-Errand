@@ -15,7 +15,7 @@ MonoBehaviour:
   m_baseContamination: 75
   m_speed: 2
   m_timeBetweenShoot: 2
-  m_defaultProjectilePrefab: {fileID: -1293779299057387050, guid: f2662e0e99901ab49b7f44497142e5c3,
+  m_defaultProjectilePrefab: {fileID: -1293779299057387050, guid: 03f7b67c389a808438233e3ea6beffb0,
     type: 3}
   m_defaultBehaviours:
   - {fileID: 11400000, guid: ec8ba4d1238c245428bb2713c2c4993b, type: 2}
