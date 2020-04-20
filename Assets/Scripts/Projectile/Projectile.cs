@@ -9,10 +9,16 @@ public class Projectile : MonoBehaviour
 
 	#region Private
 
+	private void Awake()
+	{
+		m_audioSource = GetComponent<AudioSource>();
+	}
+
 	private void OnEnable()
 	{
 		m_isReleased = false;
 		Invoke("ReleaseProjectile", m_lifeTime);
+		PlaySound();
 	}
 
 	private void OnDisable()
@@ -49,12 +55,19 @@ public class Projectile : MonoBehaviour
 		}
 	}
 
+	protected void PlaySound()
+	{
+		m_audioSource.Play();
+	}
+
 	[SerializeField]
 	private float m_speed = 1.0f;
 	[SerializeField]
 	protected int m_contaminationValue = 2;
 	[SerializeField]
 	private float m_lifeTime = 5.0f;
+	[NonSerialized]
+	private AudioSource m_audioSource = null;
 	[NonSerialized]
 	private Vector3 m_direction = Vector2.up;
 	[NonSerialized]
