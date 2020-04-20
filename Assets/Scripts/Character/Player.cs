@@ -15,6 +15,7 @@ public class Player : Character
 			IncreaseContamination(projectile.ContaminationValue);
 			m_animator.SetBool("Hit", true);
 			Invoke("DisableHitStun", projectile.HitStun);
+			ResourceManager.Instance.AcquireAudioSourceInstance(this, m_playerHitSound);
 			return true;
 		}
 		return false;
@@ -165,6 +166,9 @@ public class Player : Character
 		m_isHit = false;
 		m_animator.SetBool("Hit", false);
 	}
+
+	[SerializeField]
+	private AudioClip m_playerHitSound = null;
 
 	[NonSerialized]
 	private float m_horizontalSpeed = 0.0f;
